@@ -5,6 +5,12 @@
 profile/
 session-log/
 my-materials/
+
+# 但模板要提交 —— 否则 clone 下来没有 profile/，知识库跑不起来
+!profile/README.md
+!profile/*.example.json
+!profile/*.example.md
+!session-log/_TEMPLATE.md
 *.pdf
 *.docx
 *.jpg
