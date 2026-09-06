@@ -53,7 +53,7 @@ document.querySelectorAll('#div1 .ui-radio.checked .label')
 
 ```js
 const el = document.querySelector('#q2');
-el.value = '李雨晟';
+el.value = '<候选人>';
 ['input','change','blur'].forEach(e => el.dispatchEvent(new Event(e,{bubbles:true})));
 ```
 

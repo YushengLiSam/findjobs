@@ -132,7 +132,7 @@ generated/               表达（自由文本缓存，可复用可微调）
 | [`generated/`](generated/) | 自由文本缓存 + 自我评价的 few-shot 模板 |
 | [`troubleshooting.md`](troubleshooting.md) | 35 条「症状 → 原因 → 解法」，全是踩坑换来的 |
 | `job-leads.md` | 岗位台账（投不投） |
-| `pipeline.md` | 投后管道（笔试/面试时限）+ 各公司投递上限 + 冷却期 |
+| `pipeline.md` | 投后管道（笔试/面试时限 + 投递上限 + 冷却期）。**含投递史，gitignore**；模板见 `pipeline.example.md` |
 | `session-log/` | 每次投递记录（**gitignore**） |
 
 ## 脚本

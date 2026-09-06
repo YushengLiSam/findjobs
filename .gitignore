@@ -8,6 +8,9 @@ profile/*
 session-log/*
 my-materials/
 
+# 投递史 —— 哪家面到第几轮、哪家放弃、内推码被拒，这类信息不该公开
+pipeline.md
+
 # 模板要提交，否则 clone 下来 profile/ 是空的，知识库跑不起来
 !profile/README.md
 !profile/*.example.json

@@ -37,7 +37,7 @@
 
 - 简历附件支持 PDF、DOC、DOCX、PPT、PPTX、PNG、JPG、JPEG，页面标注上限 500 MB。
 - 上传后会询问是否解析并覆盖已有简历详情。若已经手工填写，选择“否，仅上传简历附件”，避免解析覆盖。
-- 当前指定附件：`/Users/yushengli/Documents/找工作/李雨晟中文简历.pdf`。
+- 当前指定附件：`/Users/yushengli/Documents/找工作/<简历文件名>.pdf`。
 - 头像至少 90×120，支持 JPG/JPEG/PNG/BMP，不超过 5 MB；当前知识库没有可直接上传的本地头像文件。
 - 单条作品压缩包支持 RAR/ZIP，页面提示不超过 100 MB；批量作品单个不超过 1 GB。
 
