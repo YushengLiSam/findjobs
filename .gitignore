@@ -2,11 +2,13 @@
 # ⚠️ 只有下面这些目录被排除。任何含身份证号/手机号/微信号/生日的文件
 #    必须放进 profile/，不能放 generated/ hunting/ platforms/ 根目录。
 #    投递前跑一次 scripts/check-pii.sh 自查。
-profile/
-session-log/
+# ⚠️ 用 dir/* 不是 dir/ —— 目录整个被排除时 git 不会进去遍历，
+#    里面的 ! 取反规则永远不生效。这是 git 的经典坑。
+profile/*
+session-log/*
 my-materials/
 
-# 但模板要提交 —— 否则 clone 下来没有 profile/，知识库跑不起来
+# 模板要提交，否则 clone 下来 profile/ 是空的，知识库跑不起来
 !profile/README.md
 !profile/*.example.json
 !profile/*.example.md
