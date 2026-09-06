@@ -1,0 +1,15 @@
+# 个人敏感信息 —— 绝不提交
+# ⚠️ 只有下面这些目录被排除。任何含身份证号/手机号/微信号/生日的文件
+#    必须放进 profile/，不能放 generated/ hunting/ platforms/ 根目录。
+#    投递前跑一次 scripts/check-pii.sh 自查。
+profile/
+session-log/
+my-materials/
+*.pdf
+*.docx
+*.jpg
+*.jpeg
+*.png
+
+.DS_Store
+.claude/settings.local.json

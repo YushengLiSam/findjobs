@@ -1,0 +1,3 @@
+{
+  "_说明": "Stop hook 已移到 ~/.claude/settings.json（scripts/check-writeback.sh），因为从其他目录发起会话时项目级 hook 不加载。这里留空避免重复触发。"
+}
