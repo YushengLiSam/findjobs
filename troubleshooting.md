@@ -380,3 +380,38 @@ PHMForge 是论文/项目名，真正的机构是 IBM Research。
    用 JS 派发 `pointerdown/mousedown/mouseup/click` 四连点。
 3. **简历没写月份的，解析器给的月份一律不可信**。回 `candidate_profile.json` /
    `experience_bank.md` 找依据；找不到就当推断处理并写进推断清单，别当事实。
+
+### 2026-09-06-gitignore-dir-negation · [通用] .gitignore 里目录被排除后，里面的 ! 取反永远不生效
+
+**症状**：`.gitignore` 写了
+
+```
+profile/
+!profile/README.md
+!profile/*.example.json
+```
+
+`git add -A` 之后 `profile/README.md` 和模板文件**一个都没被加进来**，也不报错。
+
+**原因**：git 的规则是——**一个目录被排除后，git 根本不会进去遍历**，
+所以目录内文件的取反规则永远不会被求值。这是 gitignore 的经典坑，不是 bug。
+
+**解法**：把目录规则从 `dir/` 改成 `dir/*`：
+
+```
+profile/*
+!profile/README.md
+!profile/*.example.json
+```
+
+`dir/*` 排除的是「目录内的每个条目」而不是「目录本身」，git 会进去遍历，取反才有机会生效。
+
+**验证方式**（别靠肉眼看 .gitignore）：
+```bash
+git add -A && git status --porcelain     # 看模板到底进没进来
+git check-ignore -q <真实PII文件> && echo 挡住 || echo 泄漏   # 逐个确认该挡的还挡着
+git ls-tree -r --name-only origin/main   # 推送后看远端实际收到什么
+```
+
+⚠️ 改完取反规则**必须两头都验**：模板进来了 **且** 真文件还挡着。
+只验一头很容易把 PII 放出去。
